@@ -1,7 +1,7 @@
 import telebot
 from taskManager import TaskManager
 
-token='8542816878:AAHCwRbGs4eP0v2Qw8JbFMRH8UFqFnSoY5s'
+token=''
 bot=telebot.TeleBot(token)
 
 taskManager = TaskManager()
