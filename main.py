@@ -10,7 +10,7 @@ cache = {}
 
 @bot.message_handler(commands=['start'])
 def start_message(message):
-    bot.send_message(message.chat.id,"Привет ✌️ ")
+    bot.send_message(message.chat.id,"Привет чувак ✌️ ")
 
 @bot.message_handler(commands=['show'])
 def start_message(message):
