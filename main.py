@@ -12,6 +12,11 @@ cache = {}
 def start_message(message):
     bot.send_message(message.chat.id,"Привет ✌️ ")
 
+@bot.message_handler(commands=['show'])
+def start_message(message):
+    tasks = taskManager.get_str_tasks()
+    bot.send_message(message.chat.id,f"{tasks}")
+
 @bot.message_handler(commands=['create'])
 def create_task(message):
     chat_id = message.chat.id
@@ -36,11 +41,6 @@ def process_desc(message):
         bot.reply_to(message, 'Задача успешно добавлена!')
     except Exception as e:
         bot.reply_to(message, 'что-то не так')
-
-@bot.message_handler(commands=['show'])
-def start_message(message):
-    tasks = taskManager.get_str_tasks()
-    bot.send_message(message.chat.id,f"{tasks}")
 
 bot.infinity_polling()
 
